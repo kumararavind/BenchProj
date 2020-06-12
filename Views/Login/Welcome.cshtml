@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Welcome";
+    Layout = "~/Views/Shared/AfterLoginView.cshtml";
+}
+
+@if (Session["UserId"] != null)
+{
+    <h2>Welcome @Html.ViewData["email"]</h2>
+    <br />
+    
+}
+else
+{
+    Response.Redirect("Index");
+}
+
+
+
+<script type="text/javascript">
+    function preventback() {
+        window.history.forward();
+    }
+    setTimeout("preventback()", 0)
+    {
+        window.onunload = function () {
+            null;
+        }
+    }
+
+</script>
+
+
+
+

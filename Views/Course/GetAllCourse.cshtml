@@ -1,0 +1,81 @@
+﻿@model IEnumerable<LMSProfile.Models.CourseModel>
+
+@{
+    ViewBag.Title = "GetAllCourse";
+    Layout = "~/Views/Shared/AfterLoginView.cshtml";
+}
+<br />
+<br />
+<p>
+    @Html.ActionLink("Add New Course", "AddCourse")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.courseId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.courseName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.courseLength)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.courseDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.courseTech)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.courseStartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.courseEndDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.catId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.courseInstructorId)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.courseId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.courseName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.courseLength)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.courseDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.courseTech)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.courseStartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.courseEndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.catId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.courseInstructorId)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditCouDetails", new { id = item.courseId }) |
+                @Html.ActionLink("Delete", "DeleteCou", new { id = item.courseId }, new { onclick = "return confirm('Are sure wants to delete?');" })
+            </td>
+        </tr>
+    }
+
+</table>
