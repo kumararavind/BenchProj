@@ -11,7 +11,7 @@ namespace LMSProfile.Controllers
     public class CategoryController : Controller
     {
         
-
+        //hiii this is from aravind to check the github status
         public ActionResult GetAllCategory()
         {
             if(Session["UserId"] != null && Session["Accountid"] != null)
